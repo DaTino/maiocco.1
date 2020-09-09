@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
         else {
           fprintf (stderr, "Unkown option character `\\x%x`.\n", optopt);
         }
-        return 1
+        return 1;
       default:
         abort();
     }
