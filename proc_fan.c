@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
   char *nval = NULL;
 
   //get opt section, only n is needed
-  int opt;
+  int opt, index;
   while((opt=getopt(argc, argv, "n:")) != -1) {
     switch (opt) {
       case 'n':
