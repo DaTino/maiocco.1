@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) {
 
   //check num arguments, should only be 2
-  if (argc != 2) {
+  if (argc < 2) {
     perror("Error: Wrong number of args\n");
     return 1;
   }
