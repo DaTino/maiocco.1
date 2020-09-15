@@ -19,8 +19,9 @@ int main(int argc, char *argv[]) {
     switch (opt) {
       case 'n':
         nval = optarg;
+	break;
       case '?':
-        if (optopt == 'c') {
+        if (optopt == 'n') {
           fprintf(stderr, "Option -%c requires an argument.\n", optopt);
         }
         else if(isprint(optopt)) {
@@ -35,6 +36,8 @@ int main(int argc, char *argv[]) {
     }
   }
 
+  //exec is gonna go here in order to run test sim
+  //think the process limiting is gonna go here?
   printf("%d\n", atoi(nval));
 
   for (index = optind; index < argc; index++) {
