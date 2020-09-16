@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+#define MAX_BUF 128
+
 
 int main(int argc, char *argv[]) {
 
@@ -24,10 +29,10 @@ int main(int argc, char *argv[]) {
         if (optopt == 'n') {
           fprintf(stderr, "Option -%c requires an argument.\n", optopt);
         }
-        else if(isprint(optopt)) {
+        if(isprint(optopt)) {
           fprintf(stderr, "Uknown option `-%c`.\n", optopt);
         }
-        else {
+        if {
           fprintf (stderr, "Unkown option character `\\x%x`.\n", optopt);
         }
         return 1;
@@ -39,6 +44,21 @@ int main(int argc, char *argv[]) {
   //exec is gonna go here in order to run test sim
   //think the process limiting is gonna go here?
   printf("%d\n", atoi(nval));
+
+  int proc_limit = atoi(nval); 
+  pid_t childpid = 0;
+
+  //work on printing lines from text document...
+  char buffer[MAX_BUF];
+  FILE *fp;
+  fp = fopen("testing.data", "r");
+  if(fp == NULL) {
+  	perror("Error: testing.data could not be opened.");
+	return(-1);
+  }	
+  while(fgets(buffer, MAX_BUF-1, fp)!=NULL){
+  	printf("%s\n", buffer);
+  } 
 
   for (index = optind; index < argc; index++) {
     printf("Non-option argument %s\n", argv[index]);

@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-I. -std=c99
+CFLAGS=-I.
 
 all: proc_fan testsim
 
