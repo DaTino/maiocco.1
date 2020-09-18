@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
         if(isprint(optopt)) {
           fprintf(stderr, "Uknown option `-%c`.\n", optopt);
         }
-        if {
+        else {
           fprintf (stderr, "Unkown option character `\\x%x`.\n", optopt);
         }
         return 1;
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
   //think the process limiting is gonna go here?
   printf("%d\n", atoi(nval));
 
-  int proc_limit = atoi(nval); 
+  int proc_limit = atoi(nval);
   pid_t childpid = 0;
   int proc_count = 0;
   int status = 0;
@@ -60,10 +60,10 @@ int main(int argc, char *argv[]) {
   if(fp == NULL) {
   	perror("Error: testing.data could not be opened.");
 	return(-1);
-  }	
+  }
   while(fgets(buffer, MAX_BUF-1, fp)!=NULL){
   	printf("%s\n", buffer);
-  } 
+  }
 
   for (index = optind; index < argc; index++) {
     printf("Non-option argument %s\n", argv[index]);
