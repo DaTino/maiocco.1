@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
   int total = 0;
   //work on printing lines from text document...
   char buffer[MAX_BUF];
-  //don't really need a file pointer because we're reading in externally, right?	
+  //don't really need a file pointer because we're reading in externally, right?
   /*
   FILE *fp;
   fp = fopen("testing.data", "r");
@@ -69,10 +69,42 @@ int main(int argc, char *argv[]) {
     printf("Non-option argument %s\n", argv[index]);
   }
   */
+  //putting stuff in buffer not from file, but from < operator and stdin!!
+  while (fgets(buffer, MAX_BUF-1, stdin) != NULL) {
+    //makin babies
+    if((childpid = fork()) == 0) {
+      printf("Child: %d is born!\n", getpid());
+      system(fArr)
+      exit(EXIT_SUCCESS);
+    }
+    else {
+      //this just counts total, not really what I want...
+      //buffer needs to hold strings
+      total ++;
+      proc_count++;
+    }
 
-  
+    if(proc_count >= proc_limit) {
+      do {
+        pid = waitpid(-1, &status, WNOHANG);
+        if (pid > 0) {
+          proc_count--;
+        }
+      } while(pid==0);
+    }
 
+  }
 
+  //waiting for death...
+  do {
+    pid = waitpid(-1, &status, WNOHANG0);
+    if (pid > 0) {
+      pr_count--;
+      printf("\nChild Slain %d, with Epitaph %d\n", pid, WEXITSTATUS(status));
+    }
+    //I think 0 means no status change while waiting?
+  } while(pid==0 || proc_count > 0);
+  printf("Total Children Forked: %d\n", total);
 
   return 0;
 }
