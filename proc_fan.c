@@ -47,9 +47,14 @@ int main(int argc, char *argv[]) {
 
   int proc_limit = atoi(nval); 
   pid_t childpid = 0;
-
+  int proc_count = 0;
+  int status = 0;
+  int pid = 0;
+  int total = 0;
   //work on printing lines from text document...
   char buffer[MAX_BUF];
+  //don't really need a file pointer because we're reading in externally, right?	
+  /*
   FILE *fp;
   fp = fopen("testing.data", "r");
   if(fp == NULL) {
@@ -63,6 +68,11 @@ int main(int argc, char *argv[]) {
   for (index = optind; index < argc; index++) {
     printf("Non-option argument %s\n", argv[index]);
   }
+  */
+
+  
+
+
 
   return 0;
 }
