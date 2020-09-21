@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
   //check num arguments, should only be 2
   if (argc < 2) {
     perror("Error: Wrong number of args\n");
-    return 1;
+    return -1;
   }
 
   char *nval = NULL;
@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
     //makin babies
     if((childpid = fork()) == 0) {
       printf("Child: %d is born!\n", getpid());
-      system(fArr)
+      system(buffer);
       exit(EXIT_SUCCESS);
     }
     else {
@@ -97,9 +97,9 @@ int main(int argc, char *argv[]) {
 
   //waiting for death...
   do {
-    pid = waitpid(-1, &status, WNOHANG0);
+    pid = waitpid(-1, &status, WNOHANG);
     if (pid > 0) {
-      pr_count--;
+      iroc_count--;
       printf("\nChild Slain %d, with Epitaph %d\n", pid, WEXITSTATUS(status));
     }
     //I think 0 means no status change while waiting?
