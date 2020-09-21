@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
     else {
       //this just counts total, not really what I want...
       //buffer needs to hold strings
-      total ++;
+      total++;
       proc_count++;
     }
 
@@ -99,7 +99,7 @@ int main(int argc, char *argv[]) {
   do {
     pid = waitpid(-1, &status, WNOHANG);
     if (pid > 0) {
-      iroc_count--;
+      proc_count--;
       printf("\nChild Slain %d, with Epitaph %d\n", pid, WEXITSTATUS(status));
     }
     //I think 0 means no status change while waiting?
