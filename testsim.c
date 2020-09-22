@@ -17,7 +17,8 @@ int main(int argc, char *argv[]) {
 	sscanf(argv[1], "%d", &sleep_time);
 	sscanf(argv[2], "%d", &n);
 
-	for(int i=n; i>0; i++) {
+	int i;	
+	for(i=n; i>0; i--) {
 		printf("Process %d w/ Repeat: %d, sleep_time remaining: %d s\n", getpid(), i, sleep_time);
 		sleep(sleep_time);
 	}
