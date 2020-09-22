@@ -1,0 +1,31 @@
+Alberto Maiocco
+maiocco.1
+CS4760
+9/22/20
+
+README
+
+This program will run the expanded version of Robbins and Robbins exercise 3.9.
+Makefile will compile both testsim.c and proc_fan.c, however if a differently
+testsim-style file is used proc_fan will allow it.
+
+Usage for proc_fan: ./proc_fan -n val
+where val is the number of concurrent processes allowed.
+
+Usage for testsim: ./testsim r w
+where r is the number of repeats a process will undergo
+and w is the wait time in seconds between repeats.
+
+In any testing data file (here testing.data is used), the executable therein
+MUST be prefixed by ./ (i.e. ./testsim), as I have not yet found a foolproof
+way around it.
+
+The program will output the status of the processes, notably the repeats and
+wait times from testsim. proc_fan will alert on process creation and death.
+
+git was used as version control; my github is github.com/DaTino for remote
+git usage.
+
+Please be gentle and let me know how I can improve for the upcoming projects.
+
+Qapla'!
