@@ -1,3 +1,6 @@
+//proc_fan.c by Alberto Maiocco
+// 9/22/20
+
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>

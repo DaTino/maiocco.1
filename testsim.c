@@ -1,4 +1,5 @@
 //testsim.c by Alberto Maiocco
+// 9/22/20
 //should run according to ex 3.9's parameters...
 
 #include <stdio.h>
