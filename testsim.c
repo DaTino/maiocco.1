@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
 
 	if (argc <= 2) {
 		perror("Error: Incorrect arg amount");
-		exit(1);
+		exit(-1);
 	}
 
 	//take in args here, sleep_time then amt of child proc
@@ -25,5 +25,5 @@ int main(int argc, char *argv[]) {
 	printf("Child Process %d has been slain. Glory upon the Klingon Empire.\n", getpid());
 
 	return sleep_time;
- 	
+
 }

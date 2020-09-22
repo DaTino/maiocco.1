@@ -28,12 +28,18 @@ int main(int argc, char *argv[]) {
       case '?':
         if (optopt == 'n') {
           fprintf(stderr, "Option -%c requires an argument.\n", optopt);
+          perror("Error: Incorrect argument usage.");
+          return -1;
         }
         if(isprint(optopt)) {
           fprintf(stderr, "Uknown option `-%c`.\n", optopt);
+          perror("Error: Unknown option entered.");
+          return -1;
         }
         else {
           fprintf (stderr, "Unkown option character `\\x%x`.\n", optopt);
+          perror("Error: Unknown option character read.");
+          return -1;
         }
         return 1;
       default:
@@ -41,7 +47,7 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  //exec is gonna go here in order to run test sim
+  //exec is gonna go here in order to run test sim <- don't need it cuz of stdin
   //think the process limiting is gonna go here?
   printf("%d\n", atoi(nval));
 
@@ -54,21 +60,7 @@ int main(int argc, char *argv[]) {
   //work on printing lines from text document...
   char buffer[MAX_BUF];
   //don't really need a file pointer because we're reading in externally, right?
-  /*
-  FILE *fp;
-  fp = fopen("testing.data", "r");
-  if(fp == NULL) {
-  	perror("Error: testing.data could not be opened.");
-	return(-1);
-  }
-  while(fgets(buffer, MAX_BUF-1, fp)!=NULL){
-  	printf("%s\n", buffer);
-  }
 
-  for (index = optind; index < argc; index++) {
-    printf("Non-option argument %s\n", argv[index]);
-  }
-  */
   //putting stuff in buffer not from file, but from < operator and stdin!!
   while (fgets(buffer, MAX_BUF-1, stdin) != NULL) {
     //makin babies
