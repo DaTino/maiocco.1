@@ -10,4 +10,4 @@ testsim: testsim.o
 	$(CC) -o testsim testsim.o
 
 clean:
-	rm proc_fan.o testsim.o
+	rm proc_fan testsim proc_fan.o testsim.o
