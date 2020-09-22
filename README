@@ -16,6 +16,10 @@ Usage for testsim: ./testsim r w
 where r is the number of repeats a process will undergo
 and w is the wait time in seconds between repeats.
 
+Usage for both together (as project calls for):
+./proc_fan -n val < test_file
+where test_file contains calls to testsim.
+
 In any testing data file (here testing.data is used), the executable therein
 MUST be prefixed by ./ (i.e. ./testsim), as I have not yet found a foolproof
 way around it.
@@ -25,6 +29,11 @@ wait times from testsim. proc_fan will alert on process creation and death.
 
 git was used as version control; my github is github.com/DaTino for remote
 git usage.
+
+By the way, simplefan.c is just the example from the book and test.txt is just
+for making sure I was doing git correctly. I'm afraid of getting rid of them
+because I don't want to risk messing my whol project up by deleting something.
+They shouldn't affect how make or proc_fan work.
 
 Please be gentle and let me know how I can improve for the upcoming projects.
 
